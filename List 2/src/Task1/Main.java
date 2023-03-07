@@ -1,8 +1,7 @@
 package Task1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -15,6 +14,9 @@ public class Main {
         if (list == null || list.isEmpty()) {
             throw new IllegalArgumentException("List cannot be null or empty");
         }
+        if (findDuplicates(list).size() > 0){
+            throw new IllegalArgumentException("List cannot contain duplicates");
+        }
         int sum = 0;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) < 0) {
@@ -25,5 +27,21 @@ public class Main {
         int n = list.size() + 1;
         int expectedSum = n * (n - 1) / 2;
         return expectedSum - sum;
+    }
+
+    public static List<Integer> findDuplicates(List<Integer> list) {
+        if (list == null || list.isEmpty()) {
+            throw new IllegalArgumentException("List cannot be null or empty");
+        }
+        Set<Integer> set = new HashSet<>();
+        List<Integer> duplicates = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if (set.contains(list.get(i))) {
+                duplicates.add(list.get(i));
+            } else {
+                set.add(list.get(i));
+            }
+        }
+        return duplicates.stream().sorted().collect(Collectors.toList());
     }
 }
