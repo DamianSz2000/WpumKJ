@@ -2,48 +2,50 @@ package Task3;
 
 public class Main {
     public static void main(String[] args) {
+        String result = "";
         for (int i = 1; i <= 100; i++) {
             if (i % 3 == 0 && i % 5 == 0 && i % 7 == 0 && i % 11 == 0 && i % 13 == 0) {
-                System.out.println("trzypiecsiedemjedenascietrzynascie");
+                result = "trzypiecsiedemjedenascietrzynascie";
             } else if (i % 3 == 0 && i % 7 == 0 && i % 11 == 0 && i % 13 == 0) {
-                System.out.println("trzysiedemjedenascietrzynascie");
+                result = "trzysiedemjedenascietrzynascie";
             } else if (i % 5 == 0 && i % 7 == 0 && i % 11 == 0 && i % 13 == 0) {
-                System.out.println("piecsiedemjedenascietrzynascie");
+                result = "piecsiedemjedenascietrzynascie";
             } else if (i % 3 == 0 && i % 5 == 0 && i % 11 == 0 && i % 13 == 0) {
-                System.out.println("trzypiecjedenascietrzynascie");
+                result = "trzypiecjedenascietrzynascie";
             } else if (i % 3 == 0 && i % 11 == 0 && i % 13 == 0) {
-                System.out.println("trzyjedenascietrzynascie");
+                result = "trzyjedenascietrzynascie";
             } else if (i % 7 == 0 && i % 11 == 0 && i % 13 == 0) {
-                System.out.println("siedemjedenascietrzynascie");
+                result = "siedemjedenascietrzynascie";
             } else if (i % 3 == 0 && i % 7 == 0 && i % 11 == 0) {
-                System.out.println("trzysiedemjedenascie");
+                result = "trzysiedemjedenascie";
             } else if (i % 5 == 0 && i % 7 == 0 && i % 11 == 0) {
-                System.out.println("piecsiedemjedenascie");
+                result = "piecsiedemjedenascie";
             } else if (i % 3 == 0 && i % 5 == 0 && i % 11 == 0) {
-                System.out.println("trzypiecjedenascie");
-            } else if (i % 3 == 0 && i % 11 == 0) {
-                System.out.println("trzyjedenascie");
+                result = "trzypiecjedenascie";
             } else if (i % 3 == 0 && i % 5 == 0 && i % 7 == 0) {
-                System.out.println("trzypiecsiedem");
-            } else if (i % 3 == 0 && i % 7 == 0) {
-                System.out.println("trzysiedem");
+                result = "trzypiecsiedem";
+            } else if (i % 3 == 0 && i % 11 == 0) {
+                result = "trzyjedenascie";
+            }  else if (i % 3 == 0 && i % 7 == 0) {
+                result = "trzysiedem";
             } else if (i % 5 == 0 && i % 7 == 0) {
-                System.out.println("piecsiedem");
+                result = "piecsiedem";
             } else if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("trzypiec");
+                result = "trzypiec";
             } else if (i % 3 == 0) {
-                System.out.println("trzy");
+                result = "trzy";
             } else if (i % 5 == 0) {
-                System.out.println("piec");
+                result = "piec";
             } else if (i % 7 == 0) {
-                System.out.println("siedem");
+                result = "siedem";
             } else if (i % 11 == 0) {
-                System.out.println("jedenascie");
+                result  = "jedenascie";
             } else if (i % 13 == 0) {
-                System.out.println("trzynascie");
+                result = "trzynascie";
             } else {
-                System.out.println(i);
+                result = String.valueOf(i);
             }
+            System.out.println(result);
         }
     }
 }

@@ -23,15 +23,7 @@ public class Main {
         }
 
         Map<String, Integer> map = new HashMap<>();
-        list.stream().forEach((List<String> l) -> {
-            l.stream().forEach((String s) -> {
-                if (map.containsKey(s)) {
-                    map.put(s, map.get(s) + 1);
-                } else {
-                    map.put(s, 1);
-                }
-            });
-        });
+        list.stream().flatMap(List::stream).forEach(s -> map.merge(s, 1, Integer::sum));
         return map;
     }
 }

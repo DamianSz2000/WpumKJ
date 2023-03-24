@@ -34,14 +34,14 @@ public class Main {
             throw new IllegalArgumentException("List cannot be null or empty");
         }
         Set<Integer> set = new HashSet<>();
-        List<Integer> duplicates = new ArrayList<>();
+        List<Integer> items = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            if (set.contains(list.get(i))) {
-                duplicates.add(list.get(i));
+            if (!items.contains(list.get(i))) {
+                items.add(list.get(i));
             } else {
                 set.add(list.get(i));
             }
         }
-        return duplicates.stream().sorted().collect(Collectors.toList());
+        return set.stream().sorted().collect(Collectors.toList());
     }
 }
