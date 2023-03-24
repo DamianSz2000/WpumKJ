@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>(Arrays.asList(2, 4, 5, 3, 0, 6, 2, 4, 5, 3, 0, 6));
+        List<Integer> list = new ArrayList<>(Arrays.asList(0, 1, 1, 1));
         System.out.println(findDuplicates(list));
     }
 
@@ -19,14 +19,14 @@ public class Main {
             throw new IllegalArgumentException("List cannot be null or empty");
         }
         Set<Integer> set = new HashSet<>();
-        List<Integer> duplicates = new ArrayList<>();
+        List<Integer> items = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            if (set.contains(list.get(i))) {
-                duplicates.add(list.get(i));
+            if (!items.contains(list.get(i))) {
+                items.add(list.get(i));
             } else {
                 set.add(list.get(i));
             }
         }
-        return duplicates.stream().sorted().collect(Collectors.toList());
+        return set.stream().sorted().collect(Collectors.toList());
     }
 }
